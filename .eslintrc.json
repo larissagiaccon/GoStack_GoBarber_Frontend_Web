@@ -46,6 +46,7 @@
 	        "tsx": "never"
 	      }
 	    ],
+      "no-console": "off",
 	    "no-use-before-define": "off",
 	    "no-unused-expressions": "off",
       "@typescript-eslint/ban-types": "off",
