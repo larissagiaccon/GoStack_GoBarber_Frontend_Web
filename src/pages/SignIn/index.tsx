@@ -1,8 +1,8 @@
 import * as Yup from 'yup';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
-import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
 import React, { useCallback, useRef } from 'react';
+import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
 
 import logoImg from '../../assets/logo.svg';
 import { useAuth } from '../../hooks/AuthContext';
@@ -44,11 +44,13 @@ const SignIn: React.FC = () => {
           password: data.password,
         });
       } catch (err) {
-        console.log(err);
+        if (err instanceof Yup.ValidationError) {
+          const errors = getValidationErrors(err);
 
-        const errors = getValidationErrors(err);
+          formRef.current?.setErrors(errors);
+        }
 
-        formRef.current?.setErrors(errors);
+        // Disparar um toast
       }
     },
     [signIn],
