@@ -1,32 +1,35 @@
 import styled, { css } from 'styled-components';
-
-const toastTypeVariations = {
-  info: css`
-    background: #ebf8ff;
-    color: #3172b7;
-  `,
-  success: css`
-    background: #e6fffa;
-    color: #2e656a;
-  `,
-  error: css`
-    background: #fddede;
-    color: #c53030;
-  `,
-};
+import { animated } from 'react-spring';
 
 interface ContainerProps {
   type?: 'info' | 'success' | 'error';
   hasDescription: boolean;
 }
 
-export const Container = styled.div<ContainerProps>`
+const toastTypeVariations = {
+  info: css`
+    background: #ebf8ff;
+    color: #3172b7;
+  `,
+
+  success: css`
+    background: #e6fffa;
+    color: #2e656a;
+  `,
+
+  error: css`
+    background: #fddede;
+    color: #c53030;
+  `,
+};
+
+export const Container = styled(animated.div)<ContainerProps>`
   width: 360px;
 
   position: relative;
   padding: 16px 30px 16px 16px;
   border-radius: 10px;
-  box-sizing: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 
   display: flex;
 
@@ -67,7 +70,7 @@ export const Container = styled.div<ContainerProps>`
       align-items: center;
 
       svg {
-        margin-top: ;
+        margin-top: 0;
       }
     `}
 `;
