@@ -69,7 +69,7 @@ export const AvatarInput = styled.div`
     border-radius: 50%;
   }
 
-  button {
+  label {
     position: absolute;
     width: 48px;
     height: 48px;
@@ -78,11 +78,16 @@ export const AvatarInput = styled.div`
     right: 0;
     bottom: 0;
     border: 0;
+    cursor: pointer;
     transition: background-color 0.2s;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    input {
+      display: none;
+    }
 
     svg {
       width: 20px;
@@ -93,5 +98,19 @@ export const AvatarInput = styled.div`
     &:hover {
       background: ${shade(0.2, '#ff9000')};
     }
+  }
+`;
+
+export const EmptyImg = styled.div`
+  background: #999591;
+  border-radius: 50%;
+  width: 186px;
+  height: 186px;
+  margin-bottom: 5px;
+
+  svg {
+    width: 100px;
+    height: 176px;
+    border-radius: 50%;
   }
 `;

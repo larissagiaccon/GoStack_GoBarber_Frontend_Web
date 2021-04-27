@@ -40,6 +40,7 @@ export const Profile = styled.div`
     width: 56px;
     height: 56px;
     border-radius: 50%;
+    margin-left: 16px;
   }
 
   div {
@@ -60,6 +61,20 @@ export const Profile = styled.div`
         opacity: 0.8;
       }
     }
+  }
+`;
+
+export const EmptyImg = styled.div`
+  background: #999591;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+
+  svg {
+    width: 50px;
+    height: 30px;
+    margin: 12px 0 0 3px;
+    border-radius: 50%;
   }
 `;
 

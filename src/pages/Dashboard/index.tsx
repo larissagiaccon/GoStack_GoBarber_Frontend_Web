@@ -3,7 +3,7 @@ import DayPicker, { DayModifiers } from 'react-day-picker';
 import { isToday, format, parseISO, isAfter } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import 'react-day-picker/lib/style.css';
-import { FiClock, FiPower } from 'react-icons/fi';
+import { FiClock, FiPower, FiUser } from 'react-icons/fi';
 
 import { Link } from 'react-router-dom';
 import logoImg from '../../assets/logo.svg';
@@ -15,6 +15,7 @@ import {
   Header,
   HeaderContent,
   Profile,
+  EmptyImg,
   Content,
   Schedule,
   NextAppointment,
@@ -144,7 +145,15 @@ const Dashboard: React.FC = () => {
           <img src={logoImg} alt="Gobarber" />
 
           <Profile>
-            <img src={user.avatar_url} alt={user.name} />
+            {user.avatar_url ? (
+              <img src={user.avatar_url} alt={user.name} />
+            ) : (
+              <EmptyImg>
+                <FiUser />
+              </EmptyImg>
+            )}
+
+            {/* <img src={user.avatar_url} alt={user.name} /> */}
             <div>
               <span>Bem-vindo,</span>
               <Link to="/profile">
