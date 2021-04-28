@@ -36,7 +36,7 @@ const ForgotPassword: React.FC = () => {
 
         const schema = Yup.object().shape({
           email: Yup.string()
-            .required('E-mail obrigatório')
+            .required('Campo obrigatório')
             .email('Digite um e-mail válido'),
         });
 
